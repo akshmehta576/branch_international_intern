@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/authFragment">
+
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.practice.branchinternapp.presentation.AuthFragment"
+        android:label="fragment_auth"
+        tools:layout="@layout/fragment_auth" >
+        <action
+            android:id="@+id/action_authFragment_to_listOfMessageFragment"
+            app:destination="@id/listOfMessageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listOfMessageFragment"
+        android:name="com.practice.branchinternapp.presentation.ListOfMessageFragment"
+        android:label="fragment_list_of_message"
+        tools:layout="@layout/fragment_list_of_message" >
+        <action
+            android:id="@+id/action_listOfMessageFragment_to_messageFragment"
+            app:destination="@id/messageFragment" />
+        <action
+            android:id="@+id/action_listOfMessageFragment_to_authFragment"
+            app:destination="@id/authFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/messageFragment"
+        android:name="com.practice.branchinternapp.presentation.MessageFragment"
+        android:label="fragment_message"
+        tools:layout="@layout/fragment_message" >
+        <action
+            android:id="@+id/action_messageFragment_to_listOfMessageFragment"
+            app:destination="@id/listOfMessageFragment" />
+    </fragment>
+</navigation>
